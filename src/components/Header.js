@@ -6,10 +6,14 @@ import PropTypes from 'prop-types' // impt snippet
 import Button from './Button' // https://stackoverflow.com/a/53328466/5847641
 
 const Header = ({ title }) => {
+    const onClick = () => {
+        console.log('Click')
+    }
+
     return (
         <header className='header' /*style={headerStyle}*/>
             <h1>Task Tracker: {title}</h1>
-            <Button color='orangered' text='Add' />
+            <Button color='orangered' text='Add' onClick={onClick} />
         </header>
     )
 }
