@@ -3,11 +3,13 @@
  */
 // import React from 'react' // was needed but is not anymore
 import PropTypes from 'prop-types' // impt snippet
+import Button from './Button' // https://stackoverflow.com/a/53328466/5847641
 
 const Header = ({ title }) => {
     return (
-        <header>
+        <header className='header' /*style={headerStyle}*/>
             <h1>Task Tracker: {title}</h1>
+            <Button color='orangered' text='Add' />
         </header>
     )
 }
@@ -24,5 +26,14 @@ Header.defaultProps = {
 Header.propTypes = {
     title: PropTypes.string, // you can use .isRequired if you want to display a warning when the prop is not supplied
 }
+
+/**
+ * If you need to style the component here just 
+ * do `style={headerStyle}` in the `<header>`.
+ */
+/*const headerStyle = {
+    color: 'red',
+    backgroundColor: 'black',
+}*/
 
 export default Header
