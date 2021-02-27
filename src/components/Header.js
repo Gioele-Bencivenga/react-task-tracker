@@ -12,8 +12,8 @@ const Header = ({ title }) => {
 
     return (
         <header className='header' /*style={headerStyle}*/>
-            <h1>Task Tracker: {title}</h1>
-            <Button color='orangered' text='Add' onClick={onClick} />
+            <h1>Task Tracker: <small>{title}</small></h1>
+            <Button color='steelblue' text='Add' onClick={onClick} />
         </header>
     )
 }

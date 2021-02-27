@@ -1,1 +1,15 @@
-// 40:32 https://www.youtube.com/watch?v=w7ejDZ8SWv8
+import Task from './Task'
+
+const Tasks = ({ tasks, onDelete }) => {
+    return (
+        <>
+            {tasks.map((task) => (
+                <Task key={task.id} task={task} onDelete={onDelete}/>
+            ))}
+        </>
+    )
+}
+
+
+
+export default Tasks

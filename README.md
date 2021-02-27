@@ -2,11 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Installing the Icons
 
-In the project directory, you can run:
+While in the project directory, run: `npm i react-icons`.
 
-### `yarn start`
+This will let you manage multiple icon libraries.
+## Running the App
+
+While in the project directory, run:
+
+### `yarn start` or `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
