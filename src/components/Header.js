@@ -4,16 +4,23 @@
 // import React from 'react' // was needed but is not anymore
 import PropTypes from 'prop-types' // impt snippet
 import Button from './Button' // https://stackoverflow.com/a/53328466/5847641
+import { useLocation } from 'react-router-dom' // provides access to current location
 
 const Header = ({ title, onAdd, showAdd }) => {
+    const location = useLocation() // current location
+
     return (
         <header className='header' /*style={headerStyle}*/>
             <h1>Task Tracker: <small>{title}</small></h1>
-            
-            <Button color={showAdd ? 'orangered' : 'steelblue'}
-                text={showAdd ? 'Close' : 'Add'}
-                onClick={onAdd}
-            />
+
+            {// if we are in the root show the button
+                location.pathname === '/' && (
+                    <Button color={showAdd ? 'orangered' : 'steelblue'}
+                        text={showAdd ? 'Close' : 'Add'}
+                        onClick={onAdd}
+                    />
+                )
+            }
         </header>
     )
 }

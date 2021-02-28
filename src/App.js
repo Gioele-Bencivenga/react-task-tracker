@@ -109,7 +109,7 @@ function App() {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
-
+        {/* if we are exactly in the root show AddTask and TaskList */}
         <Route path='/' exact render={(props) => (
           <>
             { // if `showAddTask` is true show the component
@@ -124,7 +124,9 @@ function App() {
             }
           </>
         )} />
+        {/* if we are in the about page only show About */}
         <Route path='/about' component={About} />
+        {/* show the footer regardless of which page we are in */}
         <Footer />
       </div>
     </Router>
