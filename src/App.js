@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react' // useEffect is often used to do something right after the page loads
+import { BrowserRouter as Router, Route } from 'react-router-dom' // need this if you want to route to different pages
 import Header from './components/Header'
-import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import Tasks from './components/Tasks'
+import Footer from './components/Footer'
+import About from './components/About'
 
 function App() {
 
@@ -99,23 +102,32 @@ function App() {
   }
 
   return ( // has to return a single element
-    <div className="container">
-      <Header title='track your stuff'
-        onAdd={() => setShowAddTask(!showAddTask)}
-        showAdd={showAddTask}
-      />
-      { // if `showAddTask` is true show the component
-        showAddTask && <AddTask onAdd={addTask} /> // simple way to do a ternary without an else
-      }
-      {// if there is at least one task show the tasks
-        tasks.length > 0 ? (
-          <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-        ) : ( // else display message
-            <p>No tasks here, start by adding one!</p>
-          )
-      }
+    // wrap all in `<Router>` if you need to route
+    <Router>
+      <div className="container">
+        <Header title='track your stuff'
+          onAdd={() => setShowAddTask(!showAddTask)}
+          showAdd={showAddTask}
+        />
 
-    </div>
+        <Route path='/' exact render={(props) => (
+          <>
+            { // if `showAddTask` is true show the component
+              showAddTask && <AddTask onAdd={addTask} /> // simple way to do a ternary without an else
+            }
+            {// if there is at least one task show the tasks
+              tasks.length > 0 ? (
+                <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+              ) : ( // else display message
+                  <p>No tasks here, start by adding one!</p>
+                )
+            }
+          </>
+        )} />
+        <Route path='/about' component={About} />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
