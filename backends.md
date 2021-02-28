@@ -46,8 +46,3 @@ npm start
 ```
 
 to start your devserver as usual
-
-
-finish
-1:23:46
-https://www.youtube.com/watch?v=w7ejDZ8SWv8
