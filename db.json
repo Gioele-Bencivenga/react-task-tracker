@@ -1,12 +1,6 @@
 {
   "tasks": [
     {
-      "id": 2,
-      "text": "School Meeting",
-      "day": "Feb 6th, 13:45",
-      "reminder": true
-    },
-    {
       "text": "Destroy Earth",
       "day": "Yesterday",
       "reminder": true,
@@ -17,6 +11,12 @@
       "day": "Noon",
       "reminder": true,
       "id": 4
+    },
+    {
+      "text": "School Meeting",
+      "day": "Tuesday, 14:00",
+      "reminder": true,
+      "id": 5
     }
   ]
 }

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom' // needed to have Links that don't reloa
 const Footer = () => {
     return (
         <footer>
-            <p>Copyright &copy; 2021</p>
-            <Link to="/about">About</Link>
+            <p>&copy; 2021, Powered by ReactJS</p>
+            <p><Link to="/">Home</Link></p>
+            <p><Link to="/about">About</Link></p>
         </footer>
     )
 }
